@@ -1,24 +1,47 @@
 # vim-laravel-projections
 
-This plugin provides a set of commands and basic template for working with
+This plugin provides a set of commands and basic templates for working with
 Laravel projects in Vim using [projectionist.vim][].
 
 [projectionist.vim]: https://github.com/tpope/vim-projectionist
 
 ## Pre-requisites
 
-[Projectionist][projectionist.vim] is required to use this plugin. Optionally,
-[Dispatch][dispatch.vim] can be used to leverage `:Make` and `:Dispatch`.
+- [projectionist.vim][] is required to use this plugin.
+- [dispatch.vim][] is optional if you want to can be used to leverage
+  `:Start`, `:Console`, `:Make` and `:Dispatch`.
+
+Recommended, but not required:
+
+- [composer.vim][] is recommended to use its built in support for `gf` and
+  friends. It's not all all required to use the projections in this plugin.
+
+[composer.vim]: https://github.com/noahfrederick/vim-composer
+[dispatch.vim]: https://github.com/tpope/vim-dispatch
 
 ## Installation
 
-[dispatch.vim]: https://github.com/tpope/vim-dispatch
+Right now, I'm trying to avoid having this plugin do anything fancy. If you
+want, you can just copy [laravel-projections.json][] to your
+project at `.projections.json`.
+
+If you are using [plug.vim][] or a similar plugin manager you can add this to
+your `vimrc`:
+
+```vim
+Plug 'itspriddle/vim-laravel-projections'
+```
+
+[laravel-projections.json]: https://raw.githubusercontent.com/itspriddle/vim-laravel-projections/refs/heads/main/plugin/laravel-projections.json
+[plug.vim]: https://github.com/junegunn/vim-plug
 
 ## Commands
 
 ### Base Commands
 
-- `:Console` - Open the tinker console
+- `:Console` - Open the tinker console. Requires dispatch.vim.
+- `:Start` - Open the tinker console. Requires dispatch.vim. _This isn't
+  locked in. I might use it for `composer dev`._
 
 ### Entity Commands
 
