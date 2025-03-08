@@ -45,6 +45,26 @@ Plug 'itspriddle/vim-laravel-projections'
 
 ### Entity Commands
 
+"Entities" are basically anything under `app/` and a few others. Pretty much
+everything that there's a `php artisan make:*` command is here.
+
+If you're unfamiliar with projectionist, it sets up Vim commands based on the
+file path. This means that we can run things like `:Emodel User` to open
+`app/Models/User.php`. It works with tab completion, so you can type
+`:Emodel U<Tab>` to complete to `:Emodel User`. And when you're in other
+related files, like `app/Models/UserFactory.php`, you can run `:Emodel` to
+jump to `app/Models/User.php`.
+
+In addition to `:Emodel User` to `:edit app/Models/User.php`, we can also do:
+
+- `:Smodel User` will `:split app/Models/User.php` in a vertical split
+- `:Vmodel User` will `:vsplit app/Models/User.php` in a vertical split
+- `:Tmodel User` will `:tabedit app/Models/User.php` in a new tab
+- `:Dmodel User` will `:read app/Models/User.php` the template for the model
+  (defined by this plugin) and replace the current buffer's contents with it
+- `:Omodel User` will `:drop app/Models/User.php`, which opens the file in any
+  window it's already opened in
+
 These commands all have the following variants:
 
 - `:E*` - `:edit` the destination file
@@ -53,9 +73,6 @@ These commands all have the following variants:
 - `:T*` - `:tabedit` the destination file
 - `:D*` - `:read` the destination file
 - `:O*` - `:drop` the destination file
-
-This means that, `:Emodel`, for example, can also be used as `:Smodel User`,
-`:Vmodel`, `:Tmodel`, `:Dmodel`, or `:Omodel` for `app/Models/User.php`.
 
 The list of commands is as follows:
 
@@ -179,3 +196,7 @@ statement at the top.
 Files under `app/*.php` will also include a namespace declaration based on the
 file path. For example, creating a new file `app/Models/User.php` will include
 the line `namespace App\Models;`.
+
+## License
+
+MIT License - see [`LICENSE`](./LICENSE) in this repo.
