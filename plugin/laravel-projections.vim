@@ -1,6 +1,6 @@
 " Author:  Joshua Priddle <jpriddle@me.com>
-" Version: 0.0.0
-" License: Same as Vim itself (see :help license)
+" Version: 0.0.1
+" License: MIT
 
 if &cp || exists("g:laravel_projections") && g:laravel_projections
   finish
