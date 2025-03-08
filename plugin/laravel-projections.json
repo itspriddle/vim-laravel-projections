@@ -96,6 +96,9 @@
     "app/Http/Resources/*.php": {
         "type": "resource"
     },
+    "app/Http/Responses/*.php": {
+        "type": "response"
+    },
     "app/Jobs/*.php": {
         "type": "job"
     },
