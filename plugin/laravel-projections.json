@@ -91,7 +91,7 @@
           "use Illuminate\\Http\\Request;",
           "use Illuminate\\Http\\Response;",
           "",
-          "class {basename} extends Exception",
+          "final class {basename} extends Exception",
           "{open}",
           "    /**",
           "     * Report the exception.",
