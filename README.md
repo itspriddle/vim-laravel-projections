@@ -1,26 +1,69 @@
 # vim-laravel-projections
 
-This plugin provides a set of commands and basic template for working with
+This plugin provides a set of commands and basic templates for working with
 Laravel projects in Vim using [projectionist.vim][].
 
 [projectionist.vim]: https://github.com/tpope/vim-projectionist
 
 ## Pre-requisites
 
-[Projectionist][projectionist.vim] is required to use this plugin. Optionally,
-[Dispatch][dispatch.vim] can be used to leverage `:Make` and `:Dispatch`.
+- [projectionist.vim][] is required to use this plugin.
+- [dispatch.vim][] is optional if you want to can be used to leverage
+  `:Start`, `:Console`, `:Make` and `:Dispatch`.
+
+Recommended, but not required:
+
+- [composer.vim][] is recommended to use its built in support for `gf` and
+  friends. It's not all all required to use the projections in this plugin.
+
+[composer.vim]: https://github.com/noahfrederick/vim-composer
+[dispatch.vim]: https://github.com/tpope/vim-dispatch
 
 ## Installation
 
-[dispatch.vim]: https://github.com/tpope/vim-dispatch
+Right now, I'm trying to avoid having this plugin do anything fancy. If you
+want, you can just copy [laravel-projections.json][] to your
+project at `.projections.json`.
+
+If you are using [plug.vim][] or a similar plugin manager you can add this to
+your `vimrc`:
+
+```vim
+Plug 'itspriddle/vim-laravel-projections'
+```
+
+[laravel-projections.json]: https://raw.githubusercontent.com/itspriddle/vim-laravel-projections/refs/heads/main/plugin/laravel-projections.json
+[plug.vim]: https://github.com/junegunn/vim-plug
 
 ## Commands
 
 ### Base Commands
 
-- `:Console` - Open the tinker console
+- `:Console` - Open the tinker console. Requires dispatch.vim.
+- `:Start` - Open the tinker console. Requires dispatch.vim. _This isn't
+  locked in. I might use it for `composer dev`._
 
 ### Entity Commands
+
+"Entities" are basically anything under `app/` and a few others. Pretty much
+everything that there's a `php artisan make:*` command is here.
+
+If you're unfamiliar with projectionist, it sets up Vim commands based on the
+file path. This means that we can run things like `:Emodel User` to open
+`app/Models/User.php`. It works with tab completion, so you can type
+`:Emodel U<Tab>` to complete to `:Emodel User`. And when you're in other
+related files, like `app/Models/UserFactory.php`, you can run `:Emodel` to
+jump to `app/Models/User.php`.
+
+In addition to `:Emodel User` to `:edit app/Models/User.php`, we can also do:
+
+- `:Smodel User` will `:split app/Models/User.php` in a vertical split
+- `:Vmodel User` will `:vsplit app/Models/User.php` in a vertical split
+- `:Tmodel User` will `:tabedit app/Models/User.php` in a new tab
+- `:Dmodel User` will `:read app/Models/User.php` the template for the model
+  (defined by this plugin) and replace the current buffer's contents with it
+- `:Omodel User` will `:drop app/Models/User.php`, which opens the file in any
+  window it's already opened in
 
 These commands all have the following variants:
 
@@ -30,9 +73,6 @@ These commands all have the following variants:
 - `:T*` - `:tabedit` the destination file
 - `:D*` - `:read` the destination file
 - `:O*` - `:drop` the destination file
-
-This means that, `:Emodel`, for example, can also be used as `:Smodel User`,
-`:Vmodel`, `:Tmodel`, `:Dmodel`, or `:Omodel` for `app/Models/User.php`.
 
 The list of commands is as follows:
 
@@ -156,3 +196,7 @@ statement at the top.
 Files under `app/*.php` will also include a namespace declaration based on the
 file path. For example, creating a new file `app/Models/User.php` will include
 the line `namespace App\Models;`.
+
+## License
+
+MIT License - see [`LICENSE`](./LICENSE) in this repo.
