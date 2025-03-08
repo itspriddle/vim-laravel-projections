@@ -51,7 +51,7 @@ The list of commands is as follows:
   opens `README.md`.
 - `:Edotenv [arg]` - Open the dotenv file for the given environment. With no
   argument provided, opens `.env`.
-- `:Eenum` - Open the given enum.
+- `:Eenum <arg>` - Open the given enum.
 - `:Eevent <arg>` - Open the given event.
 - `:Eexception <arg>` - Open the given exception.
 - `:Efacade <arg>` - Open the given facade.
