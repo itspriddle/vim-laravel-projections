@@ -16,3 +16,15 @@ if !exists('g:projectionist_heuristics')
 endif
 
 let g:projectionist_heuristics["artisan"] = s:projections
+
+if !exists('g:projectionist_transformations')
+  let g:projectionist_transformations = {}
+endif
+
+function! g:projectionist_transformations.to_namespace(input, o) abort
+  if a:input == '.'
+    return ''
+  endif
+
+  return '\' . join(split(a:input, '/'), '\')
+endfunction
