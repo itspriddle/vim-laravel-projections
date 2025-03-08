@@ -204,7 +204,20 @@
     },
     "tests/Unit/*Test.php": {
         "type": "test",
-        "alternate": "app/{}.php"
+        "alternate": "app/{}.php",
+        "template": [
+          "<?php",
+          "",
+          "declare(strict_types=1);",
+          "",
+          "use Illuminate\\Foundation\\Testing\\RefreshDatabase;",
+          "",
+          "uses(RefreshDatabase::class);",
+          "",
+          "describe('Unit - {basename}', function () {open}",
+          "  //",
+          "{close});"
+        ]
     },
     "tests/Feature/*Test.php": {
         "type": "test",
