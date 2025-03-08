@@ -41,6 +41,7 @@
 - `:Erepository <arg>` - Open the given repository.
 - `:Erequest <arg>` - Open the given form request.
 - `:Eresource <arg>` - Open the given API resource.
+- `:Eresponse <arg>` - Open the given HTTP response.
 - `:Eroute [arg]` - Open the given route file. With no argument provided, opens `web`.
 - `:Erule <arg>` - Open the given rule.
 - `:Escope <arg>` - Open the given scope.
