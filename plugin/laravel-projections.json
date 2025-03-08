@@ -208,7 +208,26 @@
     },
     "tests/Feature/*Test.php": {
         "type": "test",
-        "alternate": "app/{}.php"
+        "alternate": "app/{}.php",
+        "template": [
+          "<?php",
+          "",
+          "declare(strict_types=1);",
+          "",
+          "use Illuminate\\Foundation\\Testing\\RefreshDatabase;",
+          "",
+          "uses(RefreshDatabase::class);",
+          "",
+          "beforeEach(function () {open}",
+          "    $user = User::factory()->create();",
+          "",
+          "    // Sanctum::actingAs($user, ['*']);",
+          "{close});",
+          "",
+          "it('does something - {basename}', function () {open}",
+          "  //",
+          "{close});"
+        ]
     },
     "tests/*Test.php": {
         "type": "test",
