@@ -67,7 +67,40 @@
         "type": "broadcast"
     },
     "app/Casts/*.php": {
-        "type": "cast"
+        "type": "cast",
+        "template": [
+          "<?php",
+          "",
+          "namespace App\\Casts{dirname|to_namespace};",
+          "",
+          "declare(strict_types=1);",
+          "",
+          "use Illuminate\\Contracts\\Database\\Eloquent\\CastsAttributes;",
+          "use Illuminate\\Database\\Eloquent\\Model;",
+          "",
+          "class {basename} implements CastsAttributes",
+          "{open}",
+          "    /**",
+          "     * Cast the given value.",
+          "     *",
+          "     * @param  array<string, mixed>  $attributes",
+          "     */",
+          "    public function get(Model $model, string $key, mixed $value, array $attributes): mixed",
+          "    {open}",
+          "        return $value;",
+          "    {close}",
+          "",
+          "    /**",
+          "     * Prepare the given value for storage.",
+          "     *",
+          "     * @param  array<string, mixed>  $attributes",
+          "     */",
+          "    public function set(Model $model, string $key, mixed $value, array $attributes): mixed",
+          "    {open}",
+          "        return $value;",
+          "    {close}",
+          "{close}"
+        ]
     },
     "app/Console/Commands/*.php": {
         "type": "command"
