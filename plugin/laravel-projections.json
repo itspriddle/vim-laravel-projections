@@ -73,7 +73,19 @@
         "type": "command"
     },
     "app/Enums/*.php": {
-        "type": "enum"
+        "type": "enum",
+        "template": [
+          "<?php",
+          "",
+          "declare(strict_types=1);",
+          "",
+          "namespace App\\Enums{dirname|to_namespace};",
+          "",
+          "enum {basename}",
+          "{open}",
+          "    // case KEY = 'value';",
+          "{close}"
+        ]
     },
     "app/Events/*.php": {
         "type": "event"
