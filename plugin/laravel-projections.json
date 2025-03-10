@@ -114,7 +114,7 @@
     "app/Models/*.php": {
         "type": "model",
         "related": [
-          "app/Http/Controllers/{plural}Controller.php",
+          "app/Http/Controllers/{}Controller.php",
           "app/Observers/{}Observer.php",
           "app/Policies/{}Policy.php",
           "database/factories/{}Factory.php",
