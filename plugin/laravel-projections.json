@@ -63,6 +63,9 @@
            "{close}"
       ]
     },
+    "app/Actions/*.php": {
+        "type": "action"
+    },
     "app/Broadcasting/*.php": {
         "type": "broadcast"
     },
