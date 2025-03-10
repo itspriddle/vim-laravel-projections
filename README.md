@@ -76,6 +76,7 @@ These commands all have the following variants:
 
 The list of commands is as follows:
 
+- `:Eactions <arg>` - Open the given action.
 - `:Ebroadcast <arg>` - Open the given broadcast.
 - `:Ecast <arg>` - Open the given cast.
 - `:Ecommand <arg>` - Open the given console command.
