@@ -29,6 +29,9 @@ If you are using [plug.vim][] or a similar plugin manager you can add this to
 your `vimrc`:
 
 ```vim
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-dispatch' " optional, but recommended
+Plug 'noahfrederick/vim-composer' " optional, but recommended
 Plug 'itspriddle/vim-laravel-projections'
 ```
 
