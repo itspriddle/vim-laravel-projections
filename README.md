@@ -5,6 +5,20 @@ Laravel projects in Vim using [projectionist.vim][].
 
 [projectionist.vim]: https://github.com/tpope/vim-projectionist
 
+## Example Workflow
+
+- Open `vim` in your Laravel project with no arguments.
+- Open your `App\Models\User` model with `:Emodel U<tab>` (tab completing to `User`). Add a great new feature.
+- Open the corresponding test file in a vertical split with `:AV`. Add a test for your new feature.
+- Run the test file with `pest` using `:Make` (or better yet, `m<cr>`).
+- Press `<C-w><C-w>` to move back to the User model window.
+- Open your `App\Http\Controllers\UserController` controller with `:Tcontroller`.
+- Open the corresponding test file in a horizontal split with `:AS`.
+- Run the test again with `m<cr>`.
+- Start a Tinker console to diagnose some issues with `:Console`.
+- Open your web routes file with `:Eroute`.
+- Etc...
+
 ## Pre-requisites
 
 - [projectionist.vim][] is required to use this plugin.
