@@ -243,7 +243,8 @@
         ]
     },
     "resources/views/*.blade.php": {
-        "type": "view"
+        "type": "view",
+        "template": []
     },
     "script/*": {
         "type": "script",
